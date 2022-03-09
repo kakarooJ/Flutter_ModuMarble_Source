@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white">
+
+        <TextView
+            android:id="@+id/tvItemTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:textColor="#666666"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Item Title" />
+<!--
+        <Button
+            android:id="@+id/btn_edit"
+            android:layout_width="80dp"
+            android:layout_height="48dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:clickable="true"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="@string/edit" />
+-->
+        <Button
+            android:id="@+id/btn_save"
+            android:layout_width="80dp"
+            android:layout_height="48dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:clickable="true"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="@string/save" />
+
+        <ImageView
+            android:id="@+id/ivItem"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="16dp"
+            app:layout_constraintDimensionRatio="1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvItemTitle" />
+
+        <!-- columm -->
+        <TextView
+            android:id="@+id/tv_det_land"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="110dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:text="땅"
+            android:textColor="@color/det_land_type_color"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivItem" />
+
+        <TextView
+            android:id="@+id/tv_det_villa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/det_type_margin_hor"
+            android:text="빌라"
+            android:textColor="@color/det_land_type_color"
+            app:layout_constraintStart_toEndOf="@+id/tv_det_land"
+            app:layout_constraintTop_toTopOf="@+id/tv_det_land" />
+
+        <TextView
+            android:id="@+id/tv_det_building"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/det_type_margin_hor"
+            android:text="빌딩"
+            android:textColor="@color/det_land_type_color"
+            app:layout_constraintStart_toEndOf="@+id/tv_det_villa"
+            app:layout_constraintTop_toTopOf="@+id/tv_det_land" />
+
+        <TextView
+            android:id="@+id/tv_det_hotel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/det_type_margin_hor"
+            android:text="호텔"
+            android:textColor="@color/det_land_type_color"
+            app:layout_constraintStart_toEndOf="@+id/tv_det_building"
+            app:layout_constraintTop_toTopOf="@+id/tv_det_land" />
+
+        <TextView
+            android:id="@+id/tv_det_landmark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/det_type_margin_hor"
+            android:text="랜드마크"
+            android:textColor="@color/det_land_type_color"
+            app:layout_constraintStart_toEndOf="@+id/tv_det_hotel"
+            app:layout_constraintTop_toTopOf="@+id/tv_det_land" />
+
+        <!-- row -->
+        <TextView
+            android:id="@+id/tv_det_const"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:text="건설비용"
+            android:textColor="@color/det_cost_type_color"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_det_land" />
+
+        <TextView
+            android:id="@+id/tv_det_toll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="@dimen/det_type_margin_ver"
+            android:text="통행료"
+            android:textColor="@color/det_cost_type_color"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_det_const" />
+
+        <TextView
+            android:id="@+id/tv_det_acquire"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="@dimen/det_type_margin_ver"
+            android:text="인수비용"
+            android:textColor="@color/det_cost_type_color"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_det_toll" />
+
+        <TextView
+            android:id="@+id/tv_det_sell"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="@dimen/det_type_margin_ver"
+            android:text="매각비용"
+            android:textColor="@color/det_cost_type_color"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_det_acquire" />
+
+        <!-- item -->
+
+        <EditText
+            android:id="@+id/tv_cost_land1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/det_cost_color"
+            android:textSize="@dimen/det_cost_size"
+            android:enabled="false"
+            android:inputType="number"
+            android:maxLength="4"
+            android:text="10만"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_det_const"
+            app:layout_constraintEnd_toEndOf="@id/tv_det_land"/>
+
+        <EditText
+            android:id="@+id/tv_cost_land2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/det_cost_color"
+            android:textSize="@dimen/det_cost_size"
+            android:selectAllOnFocus="true"
+            android:enabled="false"
+            android:inputType="number"
+            android:maxLength="4"
+            android:text="30만"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_det_toll"
+            app:layout_constraintEnd_toEndOf="@id/tv_cost_land1" />
+
+        <EditText
+            android:id="@+id/tv_cost_land3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#666666"
+            android:textSize="@dimen/det_cost_size"
+            android:selectAllOnFocus="true"
+            android:enabled="false"
+            android:inputType="number"
+            android:maxLength="4"
+            android:text="20만"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_det_acquire"
+            app:layout_constraintEnd_toEndOf="@id/tv_cost_land2" />
+
+        <EditText
+            android:id="@+id/tv_cost_land4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/det_cost_color"
+            android:textSize="@dimen/det_cost_size"
+            android:selectAllOnFocus="true"
+            android:enabled="false"
+            android:inputType="number"
+            android:maxLength="4"
+            android:text="5만"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_det_sell"
+            app:layout_constraintEnd_toEndOf="@id/tv_cost_land3" />
+
+        <EditText
+            android:id="@+id/tv_cost_villa1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/det_cost_color"
+            android:textSize="@dimen/det_cost_size"
+            android:selectAllOnFocus="true"
+            android:enabled="false"
+            android:inputType="number"
+            android:maxLength="4"
+            android:text="60만"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_det_const"
+            app:layout_constraintEnd_toEndOf="@id/tv_det_villa"/>
+
+        <EditText
+            android:id="@+id/tv_cost_villa2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/det_cost_color"
+            android:textSize="@dimen/det_cost_size"
+            android:selectAllOnFocus="true"
+            android:enabled="false"
+            android:inputType="number"
+            android:maxLength="4"
+            android:text="20만"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_det_toll"
+            app:layout_constraintEnd_toEndOf="@id/tv_det_villa" />
+
+        <EditText
+            android:id="@+id/tv_cost_villa3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/det_cost_color"
+            android:textSize="@dimen/det_cost_size"
+            android:selectAllOnFocus="true"
+            android:enabled="false"
+            android:inputType="number"
+            android:maxLength="4"
+            android:text="120만"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_det_acquire"
+            app:layout_constraintEnd_toEndOf="@id/tv_det_villa" />
+
+        <EditText
+            android:id="@+id/tv_cost_villa4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/det_cost_color"
+            android:textSize="@dimen/det_cost_size"
+            android:selectAllOnFocus="true"
+            android:enabled="false"
+            android:inputType="number"
+            android:maxLength="4"
+            android:text="48만"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_det_sell"
+            app:layout_constraintEnd_toEndOf="@id/tv_det_villa" />
+
+        <EditText
+            android:id="@+id/tv_cost_building1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/det_cost_color"
+            android:textSize="@dimen/det_cost_size"
+            android:selectAllOnFocus="true"
+            android:enabled="false"
+            android:inputType="number"
+            android:maxLength="4"
+            android:text="45만"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_det_const"
+            app:layout_constraintEnd_toEndOf="@id/tv_det_building"/>
+
+        <EditText
+            android:id="@+id/tv_cost_building2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/det_cost_color"
+            android:textSize="@dimen/det_cost_size"
+            android:selectAllOnFocus="true"
+            android:enabled="false"
+            android:inputType="number"
+            android:maxLength="4"
+            android:text="40만"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_det_toll"
+            app:layout_constraintEnd_toEndOf="@id/tv_det_building" />
+
+        <EditText
+            android:id="@+id/tv_cost_building3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/det_cost_color"
+            android:textSize="@dimen/det_cost_size"
+            android:selectAllOnFocus="true"
+            android:enabled="false"
+            android:inputType="number"
+            android:maxLength="4"
+            android:text="105만"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_det_acquire"
+            app:layout_constraintEnd_toEndOf="@id/tv_det_building" />
+
+        <EditText
+            android:id="@+id/tv_cost_building4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/det_cost_color"
+            android:textSize="@dimen/det_cost_size"
+            android:selectAllOnFocus="true"
+            android:enabled="false"
+            android:inputType="number"
+            android:maxLength="4"
+            android:text="20만"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_det_sell"
+            app:layout_constraintEnd_toEndOf="@id/tv_det_building" />
+
+        <EditText
+            android:id="@+id/tv_cost_hotel1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/det_cost_color"
+            android:textSize="@dimen/det_cost_size"
+            android:selectAllOnFocus="true"
+            android:enabled="false"
+            android:inputType="number"
+            android:maxLength="4"
+            android:text="45만"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_det_const"
+            app:layout_constraintEnd_toEndOf="@id/tv_det_hotel"/>
+
+        <EditText
+            android:id="@+id/tv_cost_hotel2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/det_cost_color"
+            android:textSize="@dimen/det_cost_size"
+            android:selectAllOnFocus="true"
+            android:enabled="false"
+            android:inputType="number"
+            android:maxLength="4"
+            android:text="40만"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_det_toll"
+            app:layout_constraintEnd_toEndOf="@id/tv_det_hotel" />
+
+        <EditText
+            android:id="@+id/tv_cost_hotel3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/det_cost_color"
+            android:textSize="@dimen/det_cost_size"
+            android:selectAllOnFocus="true"
+            android:enabled="false"
+            android:inputType="number"
+            android:maxLength="4"
+            android:text="105만"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_det_acquire"
+            app:layout_constraintEnd_toEndOf="@id/tv_det_hotel" />
+
+        <EditText
+            android:id="@+id/tv_cost_hotel4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/det_cost_color"
+            android:textSize="@dimen/det_cost_size"
+            android:selectAllOnFocus="true"
+            android:enabled="false"
+            android:inputType="number"
+            android:maxLength="4"
+            android:text="20만"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_det_sell"
+            app:layout_constraintEnd_toEndOf="@id/tv_det_hotel" />
+
+        <EditText
+            android:id="@+id/tv_cost_landmark1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/det_cost_color"
+            android:textSize="@dimen/det_cost_size"
+            android:selectAllOnFocus="true"
+            android:enabled="false"
+            android:inputType="number"
+            android:maxLength="4"
+            android:text="45만"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_det_const"
+            app:layout_constraintEnd_toEndOf="@id/tv_det_landmark"/>
+
+        <EditText
+            android:id="@+id/tv_cost_landmark2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/det_cost_color"
+            android:textSize="@dimen/det_cost_size"
+            android:selectAllOnFocus="true"
+            android:enabled="false"
+            android:inputType="number"
+            android:maxLength="4"
+            android:text="40만"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_det_toll"
+            app:layout_constraintEnd_toEndOf="@id/tv_det_landmark" />
+
+        <EditText
+            android:id="@+id/tv_cost_landmark3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/det_cost_color"
+            android:textSize="@dimen/det_cost_size"
+            android:selectAllOnFocus="true"
+            android:enabled="false"
+            android:inputType="number"
+            android:maxLength="4"
+            android:text="105만"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_det_acquire"
+            app:layout_constraintEnd_toEndOf="@id/tv_det_landmark" />
+
+        <EditText
+            android:id="@+id/tv_cost_landmark4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/det_cost_color"
+            android:textSize="@dimen/det_cost_size"
+            android:selectAllOnFocus="true"
+            android:enabled="false"
+            android:inputType="number"
+            android:maxLength="4"
+            android:text="20만"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_det_sell"
+            app:layout_constraintEnd_toEndOf="@id/tv_det_landmark" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

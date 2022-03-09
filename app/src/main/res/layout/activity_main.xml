@@ -1,0 +1,736 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="visible"
+    tools:context="com.kakaroo.modu_calculation.MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"
+
+        android:scrollbars="vertical"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+
+        <ImageView
+            android:id="@+id/iv_city_picture"
+            android:layout_width="@dimen/city_width"
+            android:layout_height="@dimen/city_height"
+            android:contentDescription="@string/city_image"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/seoul" />
+
+        <ImageView
+            android:id="@+id/iv_villa"
+            android:layout_width="@dimen/building_width"
+            android:layout_height="@dimen/building_height"
+            app:layout_constraintBottom_toBottomOf="@id/line1"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/image_border2"
+            app:srcCompat="@drawable/villa" />
+
+        <ImageView
+            android:id="@+id/iv_building"
+            android:layout_width="@dimen/building_width"
+            android:layout_height="@dimen/building_height"
+            app:layout_constraintBottom_toBottomOf="@id/line1"
+            app:layout_constraintStart_toEndOf="@id/iv_villa"
+            android:background="@drawable/image_border2"
+            app:srcCompat="@drawable/building" />
+
+        <ImageView
+            android:id="@+id/iv_hotel"
+            android:layout_width="@dimen/building_width"
+            android:layout_height="@dimen/building_height"
+            app:layout_constraintBottom_toBottomOf="@id/line1"
+            app:layout_constraintStart_toEndOf="@id/iv_building"
+            android:background="@drawable/image_border2"
+            app:srcCompat="@drawable/hotel" />
+
+        <ImageView
+            android:id="@+id/iv_landmark"
+            android:layout_width="@dimen/building_width"
+            android:layout_height="@dimen/building_height"
+            app:layout_constraintBottom_toBottomOf="@id/line1"
+            app:layout_constraintStart_toEndOf="@id/iv_hotel"
+            android:background="@drawable/image_border2"
+            app:srcCompat="@drawable/landmark" />
+
+        <TextView
+            android:id="@+id/tv_cost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/cost"
+            android:textColor="@color/design_default_color_primary"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/iv_city_picture"
+            app:layout_constraintTop_toTopOf="@+id/iv_city_picture" />
+
+
+        <TextView
+            android:id="@+id/tv_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/description"
+            android:textColor="@color/design_default_color_primary"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/iv_city_picture"
+            app:layout_constraintTop_toBottomOf="@+id/tv_cost" />
+
+        <TextView
+            android:id="@+id/tv_cost_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/yellow"
+            android:text="@string/cost_result"
+            android:textColor="@color/black"
+            android:textSize="@dimen/cost_result"
+            android:textStyle="bold"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tv_cost"
+            app:layout_constraintStart_toEndOf="@+id/tv_cost" />
+
+        <TextView
+            android:id="@+id/tv_detail_desc"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="@string/detail_desc"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_city_picture"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tv_description"
+            app:layout_constraintTop_toBottomOf="@+id/tv_cost_result" />
+
+        <!-- seperator line -->
+        <View
+            android:id="@+id/line1"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="3dp"
+            android:background="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/iv_city_picture" />
+
+        <!-- 1st button -->
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/btn_group1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="btn_paris,btn_tokyo,btn_seoul,btn_newyork,btn_dubai,btn_london,btn_bangkok,btn_cairo,btn_rome,btn_beijing,btn_taipei,btn_prague,btn_berlin,btn_moscow,btn_geneva,btn_sydney,btn_saopaulo,btn_quebec" />
+
+        <Button
+            android:id="@+id/btn_seoul"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/seoul"
+            android:textStyle="bold"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_rome"
+            app:layout_constraintEnd_toStartOf="@id/btn_newyork"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/line1" />
+
+        <Button
+            android:id="@+id/btn_newyork"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:text="@string/newyork"
+            android:textStyle="bold"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            app:layout_constraintEnd_toStartOf="@id/btn_paris"
+            app:layout_constraintStart_toEndOf="@id/btn_seoul"
+            app:layout_constraintTop_toTopOf="@id/btn_seoul" />
+
+        <Button
+            android:id="@+id/btn_paris"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:text="@string/paris"
+            android:textStyle="bold"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            app:layout_constraintEnd_toStartOf="@id/btn_tokyo"
+            app:layout_constraintStart_toEndOf="@id/btn_newyork"
+            app:layout_constraintTop_toTopOf="@id/btn_seoul" />
+
+        <Button
+            android:id="@+id/btn_tokyo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:text="@string/tokyo"
+            android:textStyle="bold"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            app:layout_constraintEnd_toEndOf="@id/btn_london"
+            app:layout_constraintStart_toEndOf="@id/btn_paris"
+            app:layout_constraintTop_toTopOf="@id/btn_seoul" />
+
+        <Button
+            android:id="@+id/btn_london"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:text="@string/london"
+            android:textStyle="bold"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btn_tokyo"
+            app:layout_constraintTop_toTopOf="@id/btn_seoul" />
+
+
+        <!-- 2nd button -->
+
+        <Button
+            android:id="@+id/btn_rome"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/rome"
+            android:textStyle="bold"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            app:layout_constraintEnd_toStartOf="@id/btn_bangkok"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_seoul" />
+
+        <Button
+            android:id="@+id/btn_bangkok"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:text="@string/bangkok"
+            android:textStyle="bold"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            app:layout_constraintEnd_toStartOf="@id/btn_beijing"
+            app:layout_constraintStart_toEndOf="@id/btn_rome"
+            app:layout_constraintTop_toBottomOf="@+id/btn_seoul" />
+
+        <Button
+            android:id="@+id/btn_beijing"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:text="@string/beijing"
+            android:textSize="12dp"
+            android:textStyle="bold"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            app:layout_constraintEnd_toStartOf="@id/btn_quebec"
+            app:layout_constraintStart_toEndOf="@id/btn_bangkok"
+            app:layout_constraintBottom_toBottomOf="@id/btn_rome"
+            app:layout_constraintTop_toBottomOf="@+id/btn_seoul" />
+
+        <Button
+            android:id="@+id/btn_quebec"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:text="@string/quebec"
+            android:textStyle="bold"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            app:layout_constraintEnd_toStartOf="@id/btn_dubai"
+            app:layout_constraintStart_toEndOf="@id/btn_beijing"
+            app:layout_constraintTop_toBottomOf="@+id/btn_seoul" />
+
+        <Button
+            android:id="@+id/btn_dubai"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:text="@string/dubai"
+            android:textSize="12dp"
+            android:textStyle="bold"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btn_quebec"
+            app:layout_constraintBottom_toBottomOf="@id/btn_rome"
+            app:layout_constraintTop_toBottomOf="@+id/btn_seoul" />
+
+
+        <!-- 3rd button -->
+
+        <Button
+            android:id="@+id/btn_cairo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/cairo"
+            android:textSize="12dp"
+            android:textStyle="bold"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            app:layout_constraintEnd_toStartOf="@id/btn_sydney"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_rome" />
+
+        <Button
+            android:id="@+id/btn_sydney"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:text="@string/sydney"
+            android:textSize="12dp"
+            android:textStyle="bold"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            app:layout_constraintEnd_toStartOf="@id/btn_taipei"
+            app:layout_constraintStart_toEndOf="@id/btn_cairo"
+            app:layout_constraintTop_toBottomOf="@+id/btn_rome" />
+
+        <Button
+            android:id="@+id/btn_taipei"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:text="@string/taipei"
+            android:textSize="12dp"
+            android:textStyle="bold"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            app:layout_constraintEnd_toStartOf="@id/btn_saopaulo"
+            app:layout_constraintStart_toEndOf="@id/btn_sydney"
+            app:layout_constraintTop_toBottomOf="@+id/btn_rome" />
+
+        <Button
+            android:id="@+id/btn_saopaulo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:text="@string/saopaulo"
+            android:textSize="12dp"
+            android:textStyle="bold"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btn_taipei"
+            app:layout_constraintTop_toBottomOf="@+id/btn_rome" />
+
+        <!-- 4th  button -->
+        <Button
+            android:id="@+id/btn_prague"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/prague"
+            android:textSize="12dp"
+            android:textStyle="bold"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            app:layout_constraintEnd_toStartOf="@id/btn_berlin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_cairo" />
+
+        <Button
+            android:id="@+id/btn_berlin"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:text="@string/berlin"
+            android:textSize="12dp"
+            android:textStyle="bold"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            app:layout_constraintEnd_toStartOf="@id/btn_moscow"
+            app:layout_constraintStart_toEndOf="@id/btn_prague"
+            app:layout_constraintTop_toBottomOf="@+id/btn_cairo" />
+
+        <Button
+            android:id="@+id/btn_moscow"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:text="@string/moscow"
+            android:textSize="12dp"
+            android:textStyle="bold"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            app:layout_constraintEnd_toStartOf="@id/btn_geneva"
+            app:layout_constraintStart_toEndOf="@id/btn_berlin"
+            app:layout_constraintTop_toBottomOf="@+id/btn_cairo" />
+
+        <Button
+            android:id="@+id/btn_geneva"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:text="@string/geneva"
+            android:textSize="12dp"
+            android:textStyle="bold"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btn_moscow"
+            app:layout_constraintTop_toBottomOf="@+id/btn_cairo" />
+
+        <!-- seperator line -->
+        <!-- <View
+            android:id="@+id/line2"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="2dp"
+            android:background="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/btn_prague" /> -->
+
+        <!-- 1st check box-->
+        <TextView
+            android:id="@+id/tv_olympic"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="4dp"
+            android:text="@string/olympic"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent
+"
+            app:layout_constraintTop_toBottomOf="@id/btn_prague" />
+
+        <CheckBox
+            android:id="@+id/checkBox_x2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="X2"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_olympic"
+            app:layout_constraintStart_toEndOf="@+id/tv_olympic"
+            app:layout_constraintTop_toBottomOf="@id/btn_prague" />
+
+        <CheckBox
+            android:id="@+id/checkBox_x3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="X3"
+            app:layout_constraintStart_toEndOf="@+id/checkBox_x2"
+            app:layout_constraintTop_toTopOf="@+id/checkBox_x2" />
+
+        <CheckBox
+            android:id="@+id/checkBox_x4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="X4"
+            app:layout_constraintStart_toEndOf="@+id/checkBox_x3"
+            app:layout_constraintTop_toTopOf="@+id/checkBox_x3" />
+
+        <CheckBox
+            android:id="@+id/checkBox_x5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="X5"
+            app:layout_constraintStart_toEndOf="@+id/checkBox_x4"
+            app:layout_constraintTop_toTopOf="@+id/checkBox_x4" />
+
+        <!-- 2nd check box -->
+        <CheckBox
+            android:id="@+id/checkBox_color_double"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/color_double"
+            app:layout_constraintTop_toBottomOf="@id/tv_olympic" />
+
+        <CheckBox
+            android:id="@+id/checkBox_festival_double"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginStart="24dp"
+            android:text="@string/festival_double"
+            app:layout_constraintStart_toEndOf="@+id/checkBox_color_double"
+            app:layout_constraintTop_toTopOf="@+id/checkBox_color_double" />
+
+        <!-- 3rd check box -->
+
+        <CheckBox
+            android:id="@+id/checkBox_land"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/land"
+            app:layout_constraintTop_toBottomOf="@id/checkBox_color_double" />
+
+        <CheckBox
+            android:id="@+id/checkBox_villa"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginStart="10dp"
+            android:text="@string/villa"
+            app:layout_constraintStart_toEndOf="@+id/checkBox_land"
+            app:layout_constraintTop_toTopOf="@+id/checkBox_land" />
+
+        <CheckBox
+            android:id="@+id/checkBox_building"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginStart="10dp"
+            android:text="@string/building"
+            app:layout_constraintStart_toEndOf="@+id/checkBox_villa"
+            app:layout_constraintTop_toTopOf="@+id/checkBox_villa" />
+
+        <CheckBox
+            android:id="@+id/checkBox_hotel"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginStart="10dp"
+            android:text="@string/hotel"
+            app:layout_constraintStart_toEndOf="@+id/checkBox_building"
+            app:layout_constraintTop_toTopOf="@+id/checkBox_building" />
+
+        <CheckBox
+            android:id="@+id/checkBox_landmark"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginStart="10dp"
+            android:text="@string/landmark"
+            app:layout_constraintStart_toEndOf="@+id/checkBox_hotel"
+            app:layout_constraintTop_toTopOf="@+id/checkBox_hotel" />
+
+        <!-- seperator line -->
+        <View
+            android:id="@+id/line3"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="3dp"
+            android:background="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/checkBox_villa" />
+
+        <!-- 5th  button -->
+        <Button
+            android:id="@+id/btn_phuket"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/phuket"
+            android:textSize="12dp"
+            android:textColor="@color/purple_700"
+            android:textStyle="bold"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            app:layout_constraintEnd_toStartOf="@id/btn_hawaii"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/line3" />
+
+        <Button
+            android:id="@+id/btn_hawaii"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:text="@string/hawaii"
+            android:textSize="12dp"
+            android:textColor="@color/purple_700"
+            android:textStyle="bold"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            app:layout_constraintEnd_toStartOf="@id/btn_dokdo"
+            app:layout_constraintStart_toEndOf="@id/btn_phuket"
+            app:layout_constraintTop_toBottomOf="@+id/line3" />
+
+        <Button
+            android:id="@+id/btn_dokdo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:text="@string/dokdo"
+            android:textSize="12dp"
+            android:textColor="@color/purple_700"
+            android:textStyle="bold"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            app:layout_constraintEnd_toStartOf="@id/btn_bali"
+            app:layout_constraintStart_toEndOf="@id/btn_hawaii"
+            app:layout_constraintTop_toBottomOf="@+id/line3" />
+
+        <Button
+            android:id="@+id/btn_bali"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:text="@string/bali"
+            android:textSize="12dp"
+            android:textColor="@color/purple_700"
+            android:textStyle="bold"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            app:layout_constraintEnd_toStartOf="@id/btn_tahiti"
+            app:layout_constraintStart_toEndOf="@id/btn_dokdo"
+            app:layout_constraintTop_toBottomOf="@+id/line3" />
+
+        <Button
+            android:id="@+id/btn_tahiti"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:text="@string/tahiti"
+            android:textSize="12dp"
+            android:textColor="@color/purple_700"
+            android:textStyle="bold"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btn_bali"
+            app:layout_constraintTop_toBottomOf="@+id/line3" />
+
+        <!-- seperator line -->
+        <!-- <View
+            android:id="@+id/line4"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="2dp"
+            android:background="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/btn_hawaii" /> -->
+
+        <!-- 3rd check box -->
+
+        <CheckBox
+            android:id="@+id/checkBox_flag"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginTop="0dp"
+            android:text="@string/flag"
+            android:textColor="@color/purple_700"
+            app:layout_constraintTop_toBottomOf="@id/btn_phuket" />
+
+        <CheckBox
+            android:id="@+id/checkBox_parasol"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginStart="10dp"
+            android:text="@string/parasol"
+            android:textColor="@color/purple_700"
+            app:layout_constraintStart_toEndOf="@+id/checkBox_flag"
+            app:layout_constraintTop_toTopOf="@+id/checkBox_flag" />
+
+        <CheckBox
+            android:id="@+id/checkBox_bungalow"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginStart="10dp"
+            android:text="@string/bungalow"
+            android:textColor="@color/purple_700"
+            app:layout_constraintStart_toEndOf="@+id/checkBox_parasol"
+            app:layout_constraintTop_toTopOf="@+id/checkBox_parasol" />
+
+        <!-- seperator line -->
+        <View
+            android:id="@+id/line5"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="3dp"
+            android:background="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/checkBox_flag" />
+
+        <!-- bottom button -->
+        <Button
+            android:id="@+id/btn_construction_cost"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/cost_button_height"
+            android:text="@string/construction_cost"
+            android:textStyle="bold"
+            android:textSize="@dimen/cost_button_text_size"
+            app:layout_constraintBottom_toTopOf="@+id/btn_toll_fee"
+            app:layout_constraintEnd_toStartOf="@id/btn_sell_cost"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/line5" />
+
+        <Button
+            android:id="@+id/btn_sell_cost"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/cost_button_height"
+            android:layout_marginStart="8dp"
+            android:text="@string/sale_cost"
+            android:textStyle="bold"
+            android:textSize="@dimen/cost_button_text_size"
+            app:layout_constraintBottom_toTopOf="@+id/btn_toll_fee"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btn_construction_cost"
+            app:layout_constraintTop_toBottomOf="@+id/line5" />
+
+        <Button
+            android:id="@+id/btn_toll_fee"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/cost_button_height"
+            android:text="@string/toll_fee"
+            android:textStyle="bold"
+            android:textSize="@dimen/cost_button_text_size"
+            app:layout_constraintEnd_toStartOf="@id/btn_acquisition_cost"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_construction_cost" />
+
+        <Button
+            android:id="@+id/btn_acquisition_cost"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/cost_button_height"
+            android:layout_marginStart="8dp"
+            android:text="@string/acquisition_cost"
+            android:textStyle="bold"
+            android:textSize="@dimen/cost_button_text_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btn_toll_fee"
+            app:layout_constraintTop_toBottomOf="@+id/btn_construction_cost"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/btn_toll_acquisition_cost"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/cost_button_height"
+            android:text="@string/toll_acquisition_cost"
+            android:textStyle="bold"
+            android:textSize="@dimen/cost_button_text_size"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_toll_fee"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <FrameLayout
+            android:id="@+id/frameLayout"
+            android:layout_width="401dp"
+            android:layout_height="264dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="32dp"
+            app:layout_constraintBottom_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </FrameLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

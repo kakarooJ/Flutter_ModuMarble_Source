@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="city_width">160dp</dimen>
+    <dimen name="city_height">160dp</dimen>
+    <dimen name="building_width">40dp</dimen>
+    <dimen name="building_height">50dp</dimen>
+
+    <dimen name="cost_result">18dp</dimen>
+    <dimen name="det_type_margin_hor">24dp</dimen>
+    <dimen name="det_type_margin_ver">20dp</dimen>
+    <dimen name="det_cost_size">16dp</dimen>
+
+    <dimen name="cost_button_text_size">14dp</dimen>
+    <dimen name="cost_button_height">36dp</dimen>
+
+</resources>

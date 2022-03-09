@@ -1,0 +1,63 @@
+<resources>
+    <string name="app_name">모두의 마블 가격 계산</string>
+    <string name="city_image">도시그림</string>
+    <string name="cost">비용</string>
+    <string name="cost_result">0만원</string>
+    <string name="description">설명</string>
+    <string name="detail_desc">건설비용, 매각비용, 통행료, 인수비용 계산식을 보여줍니다.\n도시버튼을 길게 누르면 저장된 가격을 보여줍니다.</string>
+    <string name="olympic">올림픽 개최</string>
+    <string name="color_double">컬러독점(x2)</string>
+    <string name="festival_double">축제도시(x2)</string>
+    <string name="land">땅</string>
+    <string name="villa">빌라</string>
+    <string name="building">빌딩</string>
+    <string name="hotel">호텔</string>
+    <string name="landmark">랜드마크</string>
+
+    <string name="construction_cost">건설비용</string>
+    <string name="toll_fee">통행료</string>
+    <string name="acquisition_cost">인수비용</string>
+    <string name="sale_cost">매각비용</string>
+    <string name="toll_acquisition_cost">통행료+인수비용</string>
+
+    <string name="seoul">서울</string>
+    <string name="newyork">뉴욕</string>
+    <string name="paris">파리</string>
+    <string name="sydney">시드니</string>
+    <string name="bangkok">방콕</string>
+    <string name="beijing">베이징</string>
+    <string name="taipei">타이페이</string>
+    <string name="dubai">두바이</string>
+    <string name="cairo">카이로</string>
+    <string name="tokyo">도쿄</string>
+    <string name="quebec">퀘벡</string>
+    <string name="saopaulo">상파울루</string>
+    <string name="prague">프라하</string>
+    <string name="berlin">베를린</string>
+    <string name="moscow">모스크바</string>
+    <string name="geneva">제네바</string>
+    <string name="rome">로마</string>
+    <string name="london">런던</string>
+
+    <string name="phuket">푸켓</string>
+    <string name="hawaii">하와이</string>
+    <string name="dokdo">독도</string>
+    <string name="bali">발리</string>
+    <string name="tahiti">타이티</string>
+
+    <string name="flag">땅</string>
+    <string name="parasol">파라솔</string>
+    <string name="bungalow">방갈로</string>
+
+    <string name="change_cost">비용변경</string>
+    <string name="restore_cost">초기화</string>
+    <string name="do_you_want_to_reset_cityList">이전에 입력한 도시가격이 모두 초기화 됩니다. 정말 초기화하시겠습니까?</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="edit">편집</string>
+    <string name="save">저장</string>
+
+    <string name="no_acquire">인수불가</string>
+
+</resources>

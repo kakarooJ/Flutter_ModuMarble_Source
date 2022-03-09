@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="seoul" translatable="false">
+        <item>22,8,44,11</item>  <!-- land -->
+        <item>8,16,16,4</item>   <!-- villa -->
+        <item>24,34,48,12</item> <!-- building -->
+        <item>40,70,80,20</item> <!-- hotel -->
+        <item>40,60,0,20</item>  <!-- landmark -->
+    </string-array>
+
+    <string-array name="newyork" translatable="false">
+        <item>20,7,40,10</item>
+        <item>8,15,16,4</item>
+        <item>24,32,48,12</item>
+        <item>40,68,80,20</item>
+        <item>40,60,0,20</item>
+    </string-array>
+
+    <string-array name="paris" translatable="false">
+        <item>18,6,36,9</item>
+        <item>8,13,16,4</item>
+        <item>22,29,44,11</item>
+        <item>36,62,72,18</item>
+        <item>36,70,0,18</item>
+    </string-array>
+
+    <string-array name="tokyo" translatable="false">
+        <item>8,2,16,4</item>
+        <item>4,3,8,2</item>
+        <item>8,8,16,4</item>
+        <item>16,22,32,8</item>
+        <item>16,60,0,8</item>
+    </string-array>
+
+    <string-array name="london" translatable="false">
+        <item>16,5,32,8</item>
+        <item>8,12,16,4</item>
+        <item>22,28,44,11</item>
+        <item>36,60,72,18</item>
+        <item>36,70,0,18</item>
+    </string-array>
+
+    <string-array name="rome" translatable="false">
+        <item>14,5,28,7</item>
+        <item>6,9,12,3</item>
+        <item>18,22,36,9</item>
+        <item>30,47,60,15</item>
+        <item>30,75,0,15</item>
+    </string-array>
+
+    <string-array name="bangkok" translatable="false">
+        <item>2,1,4,1</item>
+        <item>1,1,2,1</item>
+        <item>4,2,8,2</item>
+        <item>6,6,12,3</item>
+        <item>6,25,0,3</item>
+    </string-array>
+
+    <string-array name="beijing" translatable="false">
+        <item>3,1,6,2</item>
+        <item>1,1,2,1</item>
+        <item>4,2,8,2</item>
+        <item>6,6,12,3</item>
+        <item>6,25,0,3</item>
+    </string-array>
+
+    <string-array name="quebec" translatable="false">
+        <item>10,2,20,5</item>
+        <item>4,5,8,2</item>
+        <item>12,11,24,6</item>
+        <item>20,27,40,10</item>
+        <item>20,70,0,10</item>
+    </string-array>
+
+    <string-array name="dubai" translatable="false">
+        <item>4,1,8,2</item>
+        <item>2,2,4,1</item>
+        <item>6,4,12,3</item>
+        <item>10,12,20,5</item>
+        <item>10,45,0,5</item>
+    </string-array>
+
+    <string-array name="cairo" translatable="false">
+        <item>6,1,12,3</item>
+        <item>2,2,4,1</item>
+        <item>6,5,12,3</item>
+        <item>10,13,20,5</item>
+        <item>10,45,0,5</item>
+    </string-array>
+
+    <string-array name="sydney" translatable="false">
+        <item>8,2,16,4</item>
+        <item>4,3,8,2</item>
+        <item>8,8,16,4</item>
+        <item>16,22,32,8</item>
+        <item>16,60,0,8</item>
+    </string-array>
+
+    <string-array name="taipei" translatable="false">
+        <item>4,1,8,2</item>
+        <item>2,2,4,1</item>
+        <item>6,4,12,3</item>
+        <item>10,12,20,5</item>
+        <item>10,45,0,5</item>
+    </string-array>
+
+    <string-array name="saopaulo" translatable="false">
+        <item>10,3,20,5</item>
+        <item>4,5,8,2</item>
+        <item>12,12,24,6</item>
+        <item>20,28,40,10</item>
+        <item>20,70,0,10</item>
+    </string-array>
+
+    <string-array name="prague" translatable="false">
+        <item>12,3,24,6</item>
+        <item>4,7,8,2</item>
+        <item>14,17,28,7</item>
+        <item>24,39,48,12</item>
+        <item>24,75,0,12</item>
+    </string-array>
+
+    <string-array name="berlin" translatable="false">
+        <item>12,3,24,6</item>
+        <item>4,7,8,2</item>
+        <item>14,17,28,7</item>
+        <item>24,39,48,12</item>
+        <item>24,75,0,12</item>
+    </string-array>
+
+    <string-array name="moscow" translatable="false">
+        <item>14,4,28,7</item>
+        <item>6,8,12,3</item>
+        <item>18,20,36,9</item>
+        <item>30,46,60,15</item>
+        <item>30,75,0,15</item>
+    </string-array>
+
+    <string-array name="geneva" translatable="false">
+        <item>14,5,28,7</item>
+        <item>6,9,12,3</item>
+        <item>18,22,36,9</item>
+        <item>30,47,60,15</item>
+        <item>30,75,0,15</item>
+    </string-array>
+
+    <string-array name="phuket" translatable="false">
+        <item>10,8,0,5</item>
+        <item>0,16,0,5</item>
+        <item>0,32,0,5</item>
+        <item>0,0,0,0</item>
+        <item>0,0,0,0</item>
+    </string-array>
+
+    <string-array name="hawaii" translatable="false">
+        <item>10,8,0,5</item>
+        <item>0,16,0,5</item>
+        <item>0,32,0,5</item>
+        <item>0,0,0,0</item>
+        <item>0,0,0,0</item>
+    </string-array>
+
+    <string-array name="dokdo" translatable="false">
+        <item>10,8,0,5</item>
+        <item>0,16,0,5</item>
+        <item>0,32,0,5</item>
+        <item>0,0,0,0</item>
+        <item>0,0,0,0</item>
+    </string-array>
+
+    <string-array name="bali" translatable="false">
+        <item>10,8,0,5</item>
+        <item>0,16,0,5</item>
+        <item>0,32,0,5</item>
+        <item>0,0,0,0</item>
+        <item>0,0,0,0</item>
+    </string-array>
+
+    <string-array name="tahiti" translatable="false">
+        <item>10,8,0,5</item>
+        <item>0,16,0,5</item>
+        <item>0,32,0,5</item>
+        <item>0,0,0,0</item>
+        <item>0,0,0,0</item>
+    </string-array>
+
+</resources>
